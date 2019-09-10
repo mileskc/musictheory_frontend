@@ -19,6 +19,8 @@ return (
         <h2>{data.title}</h2>
         <h3>{data.description}</h3>
         <img src ={data.img_url}/>
+        <br/>
+        <button>Begin Quiz!</button>
     </div>
 )
 }
