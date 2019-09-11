@@ -19,17 +19,35 @@ const [data, setData] = useState({quizzes: []})
 
 
 return (
-    <div className = "quiz">
-        {
+    <div className = "question">
+        <div>
+          { data.questions &&
+            data.questions.map(question => {
+              return(
+                <div className="questionBox">
+                    <img className ="questionImg" src ={question.img_url}/>
+                    <h2>{question.instructions}</h2>
+                    {question.answers.map(answer => {
+                        return (
+                            <h3>{answer.content}</h3>
+                        )
+                    })}
+                    {/* <Answer/> */}
+                </div>
+              )
+          })}
+          
+        </div>
+        {/* {
             data.questions &&
-            <div className="quizBox">
-                <img src ={data.questions[0].img_url}/>
+            <div className="questionBox">
+                <img className ="questionImg" src ={data.questions[0].img_url}/>
                 <h2>{data.questions[0].instructions}</h2>
             </div>
-        }
-        <Answer/>
+        } */}
+        
         <br/>
-        <button>Next Question</button>
+        <button>Submit Answers</button>
     </div>
 )
 }

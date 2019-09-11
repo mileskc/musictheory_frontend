@@ -23,15 +23,33 @@ return (
             data.questions &&
             <div className="answerBox">
                 {
+                    data.questions.map(question => {
+                        return(
+                    
+                    question.answers.map(answer => {
+                        return (
+                            <h3>{answer.content}</h3>
+                        )
+                    })
+                    )
+                })
+                }
+                {/* <h3>{data.questions[0].answers[0].content}</h3> */}
+            </div>
+        }
+        {/* {
+            data.questions &&
+            <div className="answerBox">
+                {
                     data.questions[0].answers.map(answer => {
                         return (
                             <h3>{answer.content}</h3>
                         )
                     })
                 }
-                {/* <h3>{data.questions[0].answers[0].content}</h3> */}
+                <h3>{data.questions[0].answers[0].content}</h3>
             </div>
-        }
+        } */}
     </div>
 )
 }

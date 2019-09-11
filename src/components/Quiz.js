@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import Question from './Question'
 import axios from 'axios'
 
 const Quiz = () => {
@@ -20,7 +21,8 @@ return (
         <h3>{data.description}</h3>
         <img src ={data.img_url}/>
         <br/>
-        <button>Begin Quiz!</button>
+        <Question/>
+        {/* <button>Begin Quiz!</button> */}
     </div>
 )
 }
