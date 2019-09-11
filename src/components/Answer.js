@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import Answer from './Answer'
 import axios from 'axios'
 
-const Question = () => {
+const Answer = () => {
 
 const [data, setData] = useState({quizzes: []})
 
@@ -19,19 +18,22 @@ const [data, setData] = useState({quizzes: []})
 
 
 return (
-    <div className = "quiz">
+    <div className = "answer">
         {
             data.questions &&
-            <div className="quizBox">
-                <img src ={data.questions[0].img_url}/>
-                <h2>{data.questions[0].instructions}</h2>
+            <div className="answerBox">
+                {
+                    data.questions[0].answers.map(answer => {
+                        return (
+                            <h3>{answer.content}</h3>
+                        )
+                    })
+                }
+                {/* <h3>{data.questions[0].answers[0].content}</h3> */}
             </div>
         }
-        <Answer/>
-        <br/>
-        <button>Next Question</button>
     </div>
 )
 }
 
-export default Question
+export default Answer
