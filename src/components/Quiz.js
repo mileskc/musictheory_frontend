@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Question from './Question'
+import Slider from "react-slick";
 import axios from 'axios'
 
 const Quiz = () => {
@@ -21,7 +22,9 @@ return (
         <h3>{data.description}</h3>
         <img src ={data.img_url}/>
         <br/>
-        <Question/>
+        
+            <Question/>
+        
         {/* <button>Begin Quiz!</button> */}
     </div>
 )

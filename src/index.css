@@ -19,3 +19,18 @@ code {
 .question {
   border: solid 2px black;
 }
+
+.answer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  display: flex;
+  border: solid 2px black;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 5px;
+}

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Answer from './Answer'
+import Slider from "react-slick";
 import axios from 'axios'
 
 const Question = () => {
@@ -29,7 +30,9 @@ return (
                     <h2>{question.instructions}</h2>
                     {question.answers.map(answer => {
                         return (
-                            <h3>{answer.content}</h3>
+                            <div className="answer">
+                                <div className="circle"></div><h3 className="option">{answer.content}</h3>
+                            </div>
                         )
                     })}
                     {/* <Answer/> */}
