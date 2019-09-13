@@ -7,7 +7,7 @@ const Question = () => {
 
 const [data, setData] = useState({quizzes: []})
 const [isFilled, setFilled] = useState(false)
-const [selectedOption, setSelectedOption] = useState('')
+const [selectedOption, setSelectedOption] = useState(false)
 const [count, setCount] = useState(0)
 const [checked, setChecked] = useState('')
 let circleColor = 'blank'
@@ -34,17 +34,20 @@ const toggleFilled = () => {
 // }
 
 const handleOptionChange = event => {
+    console.log(event.target.value)
     setSelectedOption(event.target.value)
     console.log({selectedOption})
     }
 
 const handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
-    console.log({selectedOption})
-    // selectedOption ? setCount(count + 1) : null
+    // console.log({selectedOption})
+
+    // {selectedOption ? setCount(count + 1) : null
     // console.log(`${formSubmitEvent.currentTarget.id} is ${selectedOption}`)
     // console.log(count)
 }
+
 
 return (
     <div className = "question">
@@ -55,19 +58,21 @@ return (
               
             data.questions.map( (question, qindex) => {
               return(
-                <div onClick={handleOptionChange} id={`question${qindex}`} className="questionBox">
+                <div id={`question${qindex}`} className="questionBox">
                     <h2>Question {qindex + 1}</h2>
                     <img className ="questionImg" src ={question.img_url}/>
                     <h2>{question.instructions}</h2>
                     {question.answers.map( (answer, index )=> {
+                        // console.log(answer.is_correct)
                         return (
                             <label>
                                 <input 
+                                onClick={handleOptionChange}
                                 index={index} 
                                 type="radio" 
                                 name={`option${qindex}`} 
                                 // checked={setChecked(`option${index}`)}
-                                value={`option${index}`}
+                                value={answer.is_correct}
                                 /> 
                                 {answer.content}
                             </label>
