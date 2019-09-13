@@ -13,7 +13,9 @@ code {
 } */
 
 .questionImg {
-  width: 30%;
+  width: 40%;
+  /* border: solid 1px gray;
+  padding: 3px; */
 }
 
 .question {
