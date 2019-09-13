@@ -23,7 +23,7 @@ return (
         <img src ={data.img_url}/>
         <br/>
         
-            <Question/>
+            <Question test={'test1'}/>
         
         {/* <button>Begin Quiz!</button> */}
     </div>
