@@ -26,7 +26,27 @@ code {
   align-items: center;
 }
 
-.circle {
+/* .circle {
+  display: flex;
+  border: solid 2px black;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 5px;
+} */
+
+.black {
+  background-color: black;
+  display: flex;
+  border: solid 2px black;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.blank {
+  background-color: white;
   display: flex;
   border: solid 2px black;
   width: 10px;
