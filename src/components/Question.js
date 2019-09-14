@@ -28,17 +28,17 @@ const toggleScored = () => {
     //     questionShowing = 'question' && score = 'score'
     // }
 
-    if (isScored === true) {
-        questionShowing = 'questionScored'
-    } else {
-        questionShowing = 'question'
-    }
+    // if (isScored === true) {
+    //     questionShowing = 'questionScored'
+    // } else {
+    //     questionShowing = 'question'
+    // }
 
-    if (isScored === true) {
-        score = 'scoreShowing'
-    } else {
-        score = 'score'
-    }
+    // if (isScored === true) {
+    //     score = 'scoreShowing'
+    // } else {
+    //     score = 'score'
+    // }
 
     console.log(score)
     console.log('isScored')
@@ -160,9 +160,9 @@ const handleFormSubmit = formSubmitEvent => {
 
 
 return (
-    <div className = "question">
+    <div className = "answer">
         {/* // <div className = {questionShowing}> */}
-        <form className={questionShowing} onSubmit={handleFormSubmit}>
+        <form className={isScored ? 'questionScored': 'question'} onSubmit={handleFormSubmit}>
         <h3>{data.description}</h3>
         <img className="quizImg" src ={data.img_url}/>
         <br/>
@@ -199,12 +199,12 @@ return (
           })
           }
             <br/>
-            <input type="submit" value ="Submit Answers and Get Score!"/>
+            <input onClick={()=>toggleScored()} type="submit" value ="Submit Answers and Get Score!"/>
         
             {/* <h4 className="score">Your Score is: {count}/5</h4> */}
             {/* <button>Submit Answers and Get Score!</button> */}
         </form>
-        <h4 onClick={()=>toggleScored()} className={score}>Your Score is: {count}/5</h4>
+        <h4 className={isScored ? 'scoreShowing': 'score'}>Your Score is: {count}/5</h4>
           
           
         {/* {

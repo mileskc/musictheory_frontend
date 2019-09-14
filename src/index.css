@@ -57,11 +57,11 @@ code {
 }
 
 .score {
-  display:none
+  display:none;
 }
 
 .scoreShow {
-  display:block
+  display:block;
 }
 
 /* .circle {
