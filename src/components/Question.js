@@ -137,7 +137,6 @@ const handleFormSubmit = formSubmitEvent => {
 
 return (
     <div className = "question">
-        <div>
         <form className="answer" onSubmit={handleFormSubmit}>
           { 
               data.questions &&
@@ -166,18 +165,16 @@ return (
                         )
                     })
                     }
-            
-                    {/* <Answer/> */}
+                    <br/>
                 </div>
               )
           })
           }
             <br/>
-            <input type="submit"/>
+            <input type="submit" value ="Submit Answers and Get Score!"/>
         </form>
           
           
-        </div>
         {/* {
             data.questions &&
             <div className="questionBox">
