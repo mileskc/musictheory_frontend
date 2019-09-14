@@ -163,8 +163,11 @@ return (
     <div className = "answer">
         {/* // <div className = {questionShowing}> */}
         <form className={isScored ? 'questionScored': 'question'} onSubmit={handleFormSubmit}>
-        <h3>{data.description}</h3>
-        <img className="quizImg" src ={data.img_url}/>
+            <div className = "quizHeader">
+                <h2>{data.title}</h2>
+                <h3>{data.description}</h3>
+                <img className="quizImg" src ={data.img_url}/>
+            </div>
         <br/>
           { 
               data.questions &&
@@ -174,8 +177,8 @@ return (
                 <div id={`question${qindex}`} className="questionBox">
                     <h2>Question {qindex + 1}</h2>
                     <img className ="questionImg" src ={question.img_url}/>
-                    <h2>{question.instructions}</h2>
-                    {<p>{count}</p>}
+                    <h2 className = "instructions">{question.instructions}</h2>
+                    {/* {<p>{count}</p>} */}
                     {question.answers.map( (answer, index )=> {
                         // console.log(answer.is_correct)
                         return (
