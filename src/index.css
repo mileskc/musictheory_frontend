@@ -12,6 +12,11 @@ code {
     monospace;
 } */
 
+* {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+}
+
 /* ---- Quiz ---- */
 
 .quiz {
@@ -57,6 +62,10 @@ code {
   box-shadow: 2px 2px 5px gray;
 }
 
+.questionNumber {
+  font-family: 'Lato', sans-serif;
+}
+
 .questionImg {
   width: 40%;
   /* border: solid 1px gray;
@@ -89,6 +98,14 @@ code {
 
 .scoreShow {
   display:block;
+}
+
+.submit {
+  padding: 15px;
+  font-size: 25px;
+  margin: 10px;
+  box-shadow: 2px 2px 5px gray;
+  border: 1px solid black;
 }
 
 

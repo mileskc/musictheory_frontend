@@ -164,7 +164,7 @@ return (
         {/* // <div className = {questionShowing}> */}
         <form className={isScored ? 'questionScored': 'question'} onSubmit={handleFormSubmit}>
             <div className = "quizHeader">
-                <h2>{data.title}</h2>
+                <h2 className = "questionNumber">{data.title}</h2>
                 <h3>{data.description}</h3>
                 <img className="quizImg" src ={data.img_url}/>
             </div>
@@ -175,7 +175,7 @@ return (
             data.questions.map( (question, qindex) => {
               return(
                 <div id={`question${qindex}`} className="questionBox">
-                    <h2>Question {qindex + 1}</h2>
+                    <h2 className="questionNumber">Question {qindex + 1}</h2>
                     <img className ="questionImg" src ={question.img_url}/>
                     <h2 className = "instructions">{question.instructions}</h2>
                     {/* {<p>{count}</p>} */}
@@ -202,7 +202,7 @@ return (
           })
           }
             <br/>
-            <input onClick={()=>toggleScored()} type="submit" value ="Submit Answers and Get Score!"/>
+            <button className="submit" onClick={()=>toggleScored()} type="submit" value ="Submit Answers and Get Score!">Submit Answers and Get Score!</button>
         
             {/* <h4 className="score">Your Score is: {count}/5</h4> */}
             {/* <button>Submit Answers and Get Score!</button> */}
