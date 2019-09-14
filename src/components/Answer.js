@@ -19,7 +19,8 @@ const [data, setData] = useState({quizzes: []})
 
 return (
     <div className = "answer">
-        {
+        {/* <h4>{count}</h4> */}
+        {/* {
             data.questions &&
             <div className="answerBox">
                 {
@@ -34,9 +35,9 @@ return (
                     )
                 })
                 }
-                {/* <h3>{data.questions[0].answers[0].content}</h3> */}
+                <h3>{data.questions[0].answers[0].content}</h3>
             </div>
-        }
+        } */}
         {/* {
             data.questions &&
             <div className="answerBox">

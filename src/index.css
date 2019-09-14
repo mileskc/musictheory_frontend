@@ -12,14 +12,62 @@ code {
     monospace;
 } */
 
+/* ---- Quiz ---- */
+
+.quiz {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quizHeader {
+  background-color: rgb(255, 254, 250);
+  width: 80%;
+  margin: 15px auto;
+  border: 1px solid gray;
+  box-shadow: 2px 2px 5px gray;
+  padding: 5px;
+}
+
+.answer{
+  display: flex;
+  flex-direction: column;
+}
+
+.quizImg {
+  width: 40%;
+  margin-bottom: 40px;
+}
+
+.instructions {
+  width: 50%;
+}
+
+/* ---- Each Question ---- */
+
+.questionBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(244, 247, 250);
+  margin: 15px auto;
+  width: 80%;
+  border: 1px solid gray;
+  box-shadow: 2px 2px 5px gray;
+}
+
 .questionImg {
   width: 40%;
   /* border: solid 1px gray;
   padding: 3px; */
+  box-shadow: 2px 2px 5px gray;
+  border: 1px solid black;
 }
 
 .question {
   border: solid 2px black;
+  display: block;
 }
 
 .answer {
@@ -27,6 +75,23 @@ code {
   justify-content: center;
   align-items: center;
 }
+
+/* ---- Scoring ---- */
+
+.questionScored {
+  border: solid 2px black;
+  display: none;
+}
+
+.score {
+  display:none;
+}
+
+.scoreShow {
+  display:block;
+}
+
+
 
 /* .circle {
   display: flex;
@@ -37,7 +102,7 @@ code {
   margin: 5px;
 } */
 
-.black {
+/* .black {
   background-color: black;
   display: flex;
   border: solid 2px black;
@@ -55,4 +120,4 @@ code {
   height: 10px;
   border-radius: 50%;
   margin: 5px;
-}
+} */

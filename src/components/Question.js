@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Answer from './Answer'
-import Slider from "react-slick";
 import axios from 'axios'
 
-const Question = () => {
+const Question = ({match}) => {
 
 const [data, setData] = useState({quizzes: []})
 // const [isFilled, setFilled] = useState(false)
@@ -13,19 +12,43 @@ const [selectedOption3, setSelectedOption3] = useState(false)
 const [selectedOption4, setSelectedOption4] = useState(false)
 const [selectedOption5, setSelectedOption5] = useState(false)
 const [count, setCount] = useState(0)
+const [isScored, setIsScored] = useState(false)
 const [checked, setChecked] = useState('')
+let questionShowing = 'question'
+let score = 'score'
 let circleColor = 'blank'
 // const[count, setCount] = useState(0)
 
-// const toggleFilled = () => {
-//     setFilled(!isFilled)
-//     isFilled ?  circleColor = 'black' : circleColor = 'blank'
-// }
+const toggleScored = () => {
+    setIsScored(!isScored)
+    // isScored ?  questionShowing = 'questionScored' : questionShowing = 'question' 
+    // if (isScored === true) {
+    //     questionShowing = 'questionScored' && score = 'scoreShowing'
+    // } else {
+    //     questionShowing = 'question' && score = 'score'
+    // }
+
+    // if (isScored === true) {
+    //     questionShowing = 'questionScored'
+    // } else {
+    //     questionShowing = 'question'
+    // }
+
+    // if (isScored === true) {
+    //     score = 'scoreShowing'
+    // } else {
+    //     score = 'score'
+    // }
+
+    console.log(score)
+    console.log('isScored')
+    console.log(questionShowing)
+}
 
 
   useEffect (() => {
     const fetchData = async () => {
-    const response = await axios('/quizzes/1', )
+    const response = await axios(`/quizzes/${match.params.id}`, )
     // console.log(response.data.questions[0].instructions)
     setData(response.data)
     console.log(response.data);
@@ -120,6 +143,7 @@ const handleOptionChange = event => {
 
 const handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
+
     // console.log({selectedOption})
 
     // selectedOption1 === 'true' ? setCount(count + 1) : setCount(count - 1);
@@ -136,9 +160,15 @@ const handleFormSubmit = formSubmitEvent => {
 
 
 return (
-    <div className = "question">
-        <div>
-        <form className="answer" onSubmit={handleFormSubmit}>
+    <div className = "answer">
+        {/* // <div className = {questionShowing}> */}
+        <form className={isScored ? 'questionScored': 'question'} onSubmit={handleFormSubmit}>
+            <div className = "quizHeader">
+                <h2>{data.title}</h2>
+                <h3>{data.description}</h3>
+                <img className="quizImg" src ={data.img_url}/>
+            </div>
+        <br/>
           { 
               data.questions &&
               
@@ -147,8 +177,8 @@ return (
                 <div id={`question${qindex}`} className="questionBox">
                     <h2>Question {qindex + 1}</h2>
                     <img className ="questionImg" src ={question.img_url}/>
-                    <h2>{question.instructions}</h2>
-                    {<p>{count}</p>}
+                    <h2 className = "instructions">{question.instructions}</h2>
+                    {/* {<p>{count}</p>} */}
                     {question.answers.map( (answer, index )=> {
                         // console.log(answer.is_correct)
                         return (
@@ -166,18 +196,20 @@ return (
                         )
                     })
                     }
-            
-                    {/* <Answer/> */}
+                    <br/>
                 </div>
               )
           })
           }
             <br/>
-            <input type="submit"/>
+            <input onClick={()=>toggleScored()} type="submit" value ="Submit Answers and Get Score!"/>
+        
+            {/* <h4 className="score">Your Score is: {count}/5</h4> */}
+            {/* <button>Submit Answers and Get Score!</button> */}
         </form>
+        <h4 className={isScored ? 'scoreShowing': 'score'}>Your Score is: {count}/5</h4>
           
           
-        </div>
         {/* {
             data.questions &&
             <div className="questionBox">
