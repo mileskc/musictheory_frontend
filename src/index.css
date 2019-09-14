@@ -42,12 +42,26 @@ code {
 
 .question {
   border: solid 2px black;
+  display: block;
+}
+
+.questionScored {
+  border: solid 2px black;
+  display: none;
 }
 
 .answer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.score {
+  display:none
+}
+
+.scoreShow {
+  display:block
 }
 
 /* .circle {
@@ -59,7 +73,7 @@ code {
   margin: 5px;
 } */
 
-.black {
+/* .black {
   background-color: black;
   display: flex;
   border: solid 2px black;
@@ -77,4 +91,4 @@ code {
   height: 10px;
   border-radius: 50%;
   margin: 5px;
-}
+} */
