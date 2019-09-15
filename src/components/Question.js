@@ -182,6 +182,7 @@ return (
                     {question.answers.map( (answer, index )=> {
                         // console.log(answer.is_correct)
                         return (
+                            <p>
                             <label>
                                 <input 
                                 onChange={handleOptionChange}
@@ -191,8 +192,16 @@ return (
                                 // checked={setChecked(`option${index}`)}
                                 value={answer.is_correct}
                                 /> 
-                                {answer.content}
+                                <span>{answer.content}</span>
                             </label>
+                            </p>
+                        //     <RadioGroup
+                        //     name="size"
+                        //     withGap
+                        //     label="T-Shirt Size"
+                        //     value="xl"
+                        //     options={[{label: 'XL',value: 'xl'},{label: 'L',value: 'l'},{label: 'M',value: 'm'}]}
+                        //   />
                         )
                     })
                     }
