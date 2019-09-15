@@ -160,11 +160,11 @@ const handleFormSubmit = formSubmitEvent => {
 
 
 return (
-    <div className = "answer">
+    <div className = "quiz">
         {/* // <div className = {questionShowing}> */}
         <form className={isScored ? 'questionScored': 'question'} onSubmit={handleFormSubmit}>
             <div className = "quizHeader">
-                <h2>{data.title}</h2>
+                <h2 className = "questionNumber">{data.title}</h2>
                 <h3>{data.description}</h3>
                 <img className="quizImg" src ={data.img_url}/>
             </div>
@@ -175,13 +175,14 @@ return (
             data.questions.map( (question, qindex) => {
               return(
                 <div id={`question${qindex}`} className="questionBox">
-                    <h2>Question {qindex + 1}</h2>
+                    <h2 className="questionNumber">Question {qindex + 1}</h2>
                     <img className ="questionImg" src ={question.img_url}/>
                     <h2 className = "instructions">{question.instructions}</h2>
                     {/* {<p>{count}</p>} */}
                     {question.answers.map( (answer, index )=> {
                         // console.log(answer.is_correct)
                         return (
+                            <p>
                             <label>
                                 <input 
                                 onChange={handleOptionChange}
@@ -191,8 +192,16 @@ return (
                                 // checked={setChecked(`option${index}`)}
                                 value={answer.is_correct}
                                 /> 
-                                {answer.content}
+                                <span>{answer.content}</span>
                             </label>
+                            </p>
+                        //     <RadioGroup
+                        //     name="size"
+                        //     withGap
+                        //     label="T-Shirt Size"
+                        //     value="xl"
+                        //     options={[{label: 'XL',value: 'xl'},{label: 'L',value: 'l'},{label: 'M',value: 'm'}]}
+                        //   />
                         )
                     })
                     }
@@ -202,7 +211,7 @@ return (
           })
           }
             <br/>
-            <input onClick={()=>toggleScored()} type="submit" value ="Submit Answers and Get Score!"/>
+            <button className="submit" onClick={()=>toggleScored()} type="submit" value ="Submit Answers and Get Score!">Submit Answers and Get Score!</button>
         
             {/* <h4 className="score">Your Score is: {count}/5</h4> */}
             {/* <button>Submit Answers and Get Score!</button> */}

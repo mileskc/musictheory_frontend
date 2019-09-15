@@ -11,6 +11,53 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 } */
+#root > div > div {
+  z-index: 99999 !important;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+}
+
+/* Main Page */
+
+.siteTitle {
+  display: flex;
+  font-size: 50px;
+  justify-content: left;
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  display: flex;
+}
+
+/* nav {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: whitesmoke;
+  height: 400px;
+  width: 19%;
+  font-size: 25px;
+} */
+
+nav {
+  margin: 0;
+}
+
+.btn {
+  background-color: navy;
+}
+
+.quizLink {
+  margin: 10px;
+  text-decoration: none;
+  color: navy;
+}
 
 /* ---- Quiz ---- */
 
@@ -19,6 +66,8 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 79%;
+  margin: 10px;
 }
 
 .quizHeader {
@@ -30,10 +79,10 @@ code {
   padding: 5px;
 }
 
-.answer{
+/* .answer{
   display: flex;
   flex-direction: column;
-}
+} */
 
 .quizImg {
   width: 40%;
@@ -57,6 +106,10 @@ code {
   box-shadow: 2px 2px 5px gray;
 }
 
+.questionNumber {
+  font-family: 'Lato', sans-serif;
+}
+
 .questionImg {
   width: 40%;
   /* border: solid 1px gray;
@@ -66,8 +119,9 @@ code {
 }
 
 .question {
-  border: solid 2px black;
+  border: solid 1px black;
   display: block;
+  background-color: rgb(154, 162, 198);
 }
 
 .answer {
@@ -87,8 +141,23 @@ code {
   display:none;
 }
 
-.scoreShow {
+.scoreShowing {
   display:block;
+  font-size: 40px;
+  margin: 200px auto;
+  background-color: whitesmoke;
+  width: 60%;
+  /* height: 100px; */
+  padding: 20px;
+  color: black;
+}
+
+.submit {
+  padding: 15px;
+  font-size: 25px;
+  margin: 10px;
+  box-shadow: 2px 2px 5px gray;
+  border: 1px solid black;
 }
 
 
