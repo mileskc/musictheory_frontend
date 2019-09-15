@@ -11,6 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 } */
+#root > div > div {
+  z-index: 99999 !important;
+}
 
 * {
   font-family: 'Montserrat', sans-serif;
@@ -25,13 +28,14 @@ code {
   justify-content: left;
   margin: 10px;
   text-decoration: none;
+  color: black;
 }
 
 .container {
   display: flex;
 }
 
-nav {
+/* nav {
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -39,11 +43,20 @@ nav {
   height: 400px;
   width: 19%;
   font-size: 25px;
+} */
+
+nav {
+  margin: 0;
+}
+
+.btn {
+  background-color: navy;
 }
 
 .quizLink {
   margin: 10px;
   text-decoration: none;
+  color: navy;
 }
 
 /* ---- Quiz ---- */
