@@ -17,6 +17,35 @@ code {
   font-weight: lighter;
 }
 
+/* Main Page */
+
+.siteTitle {
+  display: flex;
+  font-size: 50px;
+  justify-content: left;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: whitesmoke;
+  height: 400px;
+  width: 19%;
+  font-size: 25px;
+}
+
+.quizLink {
+  margin: 10px;
+  text-decoration: none;
+}
+
 /* ---- Quiz ---- */
 
 .quiz {
@@ -24,6 +53,8 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 79%;
+  margin: 10px;
 }
 
 .quizHeader {
@@ -35,10 +66,10 @@ code {
   padding: 5px;
 }
 
-.answer{
+/* .answer{
   display: flex;
   flex-direction: column;
-}
+} */
 
 .quizImg {
   width: 40%;
@@ -75,8 +106,9 @@ code {
 }
 
 .question {
-  border: solid 2px black;
+  border: solid 1px black;
   display: block;
+  background-color: rgb(154, 162, 198);
 }
 
 .answer {
@@ -96,8 +128,15 @@ code {
   display:none;
 }
 
-.scoreShow {
+.scoreShowing {
   display:block;
+  font-size: 40px;
+  margin: 200px auto;
+  background-color: whitesmoke;
+  width: 60%;
+  /* height: 100px; */
+  padding: 20px;
+  color: black;
 }
 
 .submit {

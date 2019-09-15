@@ -160,7 +160,7 @@ const handleFormSubmit = formSubmitEvent => {
 
 
 return (
-    <div className = "answer">
+    <div className = "quiz">
         {/* // <div className = {questionShowing}> */}
         <form className={isScored ? 'questionScored': 'question'} onSubmit={handleFormSubmit}>
             <div className = "quizHeader">

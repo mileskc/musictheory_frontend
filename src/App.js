@@ -26,12 +26,12 @@ const App = () => {
     <div className="App">
         <Router>
         <header>
-        <Link to="/">Music Theory Quizzes</Link>
+        <Link to="/" className="siteTitle">Music Theory Quizzes</Link>
           <div className = "container">
             <nav>
-              <Link to="/quiz/1">Basic Intervals</Link>
-              <Link to="/quiz/2">Triad Chords</Link>
-              <Link to="/quiz/3">Quiz 3</Link>
+              <Link to="/quiz/1" className = "quizLink">Basic Intervals</Link>
+              <Link to="/quiz/2" className = "quizLink">Triad Chords</Link>
+              <Link to="/quiz/3" className = "quizLink">Quiz 3</Link>
             </nav>
             {/* <Route path="/Quiz1" component={Quiz} /> */}
             <Switch>
