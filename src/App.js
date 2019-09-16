@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
-import { SideNav, SideNavItem, Button } from 'react-materialize';
+import { SideNav, SideNavItem, Button, Parallax, Select, Navbar, NavItem} from 'react-materialize';
 import Navigation from 'react-toolbox/lib/navigation';
 // import Link from 'react-toolbox/lib/link';
 // import Quiz from './components/Quiz'
@@ -26,28 +26,89 @@ const App = () => {
 
   return (
     <div className="App">
+      <Parallax image={<img src='https://images.unsplash.com/photo-1453906971074-ce568cccbc63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' />} />
         <Router>
-        <header>
+        {/* <header>
           <Link to="/" className="siteTitle">Music Theory Quizzes</Link>
-        </header>
-          <div className = "container">
+        </header> */}
+      
+        {/* <Link to='/count'>Submit Answers and Get Score!</Link> */}
+      
+      <div className="section white">
+        <div className="row container">
+          <h2 className="header">
+            <Link to="/" className="siteTitle">Music Theory Quizzes</Link>
+          </h2>
+          <p className="grey-text text-darken-3 lighten-3">
+            Blah blah music theory
+          </p>
+
+          {/* ----- Sidenav ----- */}
+
+          {/* <div className = "container">
             <div className ='navButton'>
             <SideNav trigger={<Button waves="light">Quizzes</Button>} options={{closeOnClick: true}}>
+            <SideNavItem className='linkImage'userView user={{
+                // background: 'https://images.unsplash.com/photo-1453906971074-ce568cccbc63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
+                // background: 'https://images.unsplash.com/photo-1542120526-89a7039730ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80',
+                name: 'Quiz List',
+              }} />
               <SideNavItem href="#!icon"><Link to="/quiz/1" className = "quizLink" label='Basic Intervals'>Basic Intervals</Link></SideNavItem>
               <SideNavItem href="#!second"><Link to="/quiz/2" className = "quizLink" label='Triad Chords'>Triad Chords</Link></SideNavItem>
               <SideNavItem waves href="#!third"><Link to="/quiz/3" className = "quizLink">Quiz 3</Link></SideNavItem>
             </SideNav>
-            
             </div>
-            {/* <Route path="/Quiz1" component={Quiz} /> */}
             <Switch>
               <Route path="/quiz/:id" component={Question} />
-              {/* <Route path="/count" component={Answer}/> */}
+            </Switch>
+          </div> */}
+
+          {/* ----- Attempt at Select drop down ----- */}
+
+          {/* <div className = "container">
+            <div className ='navButton'>
+            <Select value="">
+            <option value="" disabled>
+              Select a Quiz
+            </option>
+            <option value="1">
+              <Link to="/quiz/1" className = "quizLink" label='Basic Intervals'>Basic Intervals</Link>
+            </option>
+            <option value="2">
+              <Link to="/quiz/2" className = "quizLink" label='Triad Chords'>Triad Chords</Link>
+            </option>
+            <option value="3">
+              <Link to="/quiz/3" className = "quizLink">Quiz 3</Link>
+            </option>
+            </Select>
+            </div>
+            <Switch>
+              <Route path="/quiz/:id" component={Question} />
+            </Switch>
+          </div> */}
+
+          <div className = "container">
+            <div className ='navButton'>
+            <Navbar brand={<a />} alignLinks="right">
+            <NavItem href="">
+              <Link to="/quiz/1" className = "quizLink" label='Basic Intervals'>Basic Intervals</Link>
+            </NavItem>
+            <NavItem href="">
+            <Link to="/quiz/2" className = "quizLink" label='Triad Chords'>Triad Chords</Link>
+            </NavItem>
+            <NavItem href="">
+            <Link to="/quiz/3" className = "quizLink">Quiz 3</Link>
+            </NavItem>
+          
+            </Navbar>
+            </div>
+            <Switch>
+              <Route path="/quiz/:id" component={Question} />
             </Switch>
           </div>
-      
-        {/* <Link to='/count'>Submit Answers and Get Score!</Link> */}
-      </Router>
+      </div>
+    </div>
+<Parallax image={<img src="https://images.unsplash.com/photo-1542120526-89a7039730ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" />} />
       {/* {!isShowing? <h2 onClick={()=>toggleQuiz()} className="quiz1">Basic Intervals</h2> : null} */}
       {/* <h2 onClick={()=>toggleQuiz()} className="quiz1">{data.title}</h2>
       {isShowing ? <Quiz/> : null} */}
@@ -62,7 +123,7 @@ const App = () => {
           }
         </div> */}
 
-    
+    </Router>
     </div>
     
   );

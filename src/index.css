@@ -22,18 +22,33 @@ code {
 
 /* Main Page */
 
-.siteTitle {
+/* .siteTitle {
   display: flex;
   font-size: 50px;
   justify-content: left;
   margin: 10px;
   text-decoration: none;
   color: black;
-}
+} */
+
+
+/* header {
+  background-image: url('https://images.unsplash.com/photo-1542120526-89a7039730ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80');
+  height: 300px;
+  background-position-y: -300px;
+} */
 
 .container {
   display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* margin: 0 auto; */
 }
+
+/* .section {
+  height: 300px;
+} */
 
 /* nav {
   display: flex;
@@ -45,28 +60,68 @@ code {
   font-size: 25px;
 } */
 
+/* ---- Navigation ---- */
+
 nav {
   margin: 0;
 }
 
-.btn {
-  background-color: navy;
+nav ul {
+  background-color: rgb(111, 123, 164)
 }
+
+.btn {
+  display: flex;
+  background-color: navy;
+  width: 100%;
+  left: 0;
+  font-size: 40px;
+  padding: 10px;
+  height: 75px;
+}
+
+.btn:hover {
+  background-color: rgb(111, 123, 164);
+}
+
+.navbutton {
+  display: flex;
+  width: 100%;
+  left: 0;
+  justify-content: left;
+}
+
+/* #sidenav_2.sidenav {
+  vertical-align: center;
+} */
+
+/* .SideNav {
+  justify-content: left;
+} */
 
 .quizLink {
-  margin: 10px;
   text-decoration: none;
   color: navy;
+  font-size: 25px;
 }
 
+/* .user-view {
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+} */
+
+
 /* ---- Quiz ---- */
+
+
 
 .quiz {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 79%;
+  /* width: 79%; */
   margin: 10px;
 }
 
@@ -120,14 +175,27 @@ nav {
 
 .question {
   border: solid 1px black;
-  display: block;
-  background-color: rgb(154, 162, 198);
+  /* display: block; */
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(111, 123, 164);
+  margin: 0 auto;
+  text-align: center;
 }
 
 .answer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+span {
+  color: black;
+}
+
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:after {
+  background-color: indigo;
+  border: indigo;
 }
 
 /* ---- Scoring ---- */
@@ -159,6 +227,7 @@ nav {
   box-shadow: 2px 2px 5px gray;
   border: 1px solid black;
 }
+
 
 
 
