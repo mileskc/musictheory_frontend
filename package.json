@@ -1,11 +1,12 @@
 {
   "name": "musictheory_client",
   "version": "0.1.0",
-  "proxy": "http://localhost:3000",
+  "proxy": "https://beyond-measure.herokuapp.com/quizzes",
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
     "materialize-css": "^1.0.0",
+    "netlify-cli": "^2.15.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-materialize": "^3.4.1",
