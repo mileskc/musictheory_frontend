@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
-import { SideNav, SideNavItem, Button, Parallax, Select, Navbar, NavItem} from 'react-materialize';
+import { SideNav, SideNavItem, Button, Parallax, Select, Navbar, NavItem, Dropdown, Divider} from 'react-materialize';
 import Navigation from 'react-toolbox/lib/navigation';
 // import Link from 'react-toolbox/lib/link';
 // import Quiz from './components/Quiz'
@@ -36,13 +36,30 @@ const App = () => {
       
       <div className="section white">
         <div className="row container">
+          <header>
           <h2 className="header">
             <Link to="/" className="siteTitle">Music Theory Quizzes</Link>
           </h2>
+          </header>
+          <br/>
           <p className="grey-text text-darken-3 lighten-3">
             Blah blah music theory
           </p>
 
+            <div className = "container">
+              <div className ='navButton'>
+                <Link to="/quiz/1" className = "quizLink" label='Basic Intervals'>Basic Intervals</Link>
+                <br/>
+                <Link to="/quiz/2" className = "quizLink" label='Triad Chords'>Triad Chords</Link>
+                <br/>
+                <Link to="/quiz/3" className = "quizLink">Quiz 3</Link>
+                <br/>
+              </div>
+              <Switch>
+                <Route path="/quiz/:id" component={Question} />
+              </Switch>
+          </div>
+          
           {/* ----- Sidenav ----- */}
 
           {/* <div className = "container">
@@ -87,9 +104,11 @@ const App = () => {
             </Switch>
           </div> */}
 
-          <div className = "container">
+          {/* ----- Navbar but turns to hamburger on mobile ----*/}
+
+          {/* <div className = "container">
             <div className ='navButton'>
-            <Navbar brand={<a />} alignLinks="right">
+            <Navbar className='navBar' brand={<a />} alignLinks="right">
             <NavItem href="">
               <Link to="/quiz/1" className = "quizLink" label='Basic Intervals'>Basic Intervals</Link>
             </NavItem>
@@ -105,7 +124,30 @@ const App = () => {
             <Switch>
               <Route path="/quiz/:id" component={Question} />
             </Switch>
-          </div>
+          </div> */}
+
+          {/* ----- react materialize drop down attempt  --- */}
+          {/* <div className = "container">
+            <div className ='navButton'>
+            <Navbar className='navBar' brand={<a />} alignLinks="right">
+            <Dropdown name="Drop"trigger={<a />}>
+                <a href="">
+                  <Link to="/quiz/1" className = "quizLink" label='Basic Intervals'>Basic Intervals</Link>
+                </a>
+                <a href="">
+                  <Link to="/quiz/2" className = "quizLink" label='Triad Chords'>Triad Chords</Link>
+                </a>
+                <Divider/>
+                <a href="">
+                  <Link to="/quiz/3" className = "quizLink">Quiz 3</Link>
+                </a>
+            </Dropdown>
+            </Navbar>
+            </div>
+            <Switch>
+              <Route path="/quiz/:id" component={Question} />
+            </Switch>
+          </div> */}
       </div>
     </div>
 <Parallax image={<img src="https://images.unsplash.com/photo-1542120526-89a7039730ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" />} />
