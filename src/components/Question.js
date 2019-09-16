@@ -49,7 +49,7 @@ const toggleScored = () => {
   useEffect (() => {
     const fetchData = async () => {
     // const response = await axios(`/quizzes/${match.params.id}`, )
-    const response = await axios(`/quizzes/${props.id}`, )
+    const response = await axios.get(`/quizzes/${props.id}`)
     // console.log(response.data.questions[0].instructions)
     setData(response.data)
     console.log(response.data);
