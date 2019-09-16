@@ -28,12 +28,6 @@ const App = () => {
     <div className="App">
       <Parallax image={<img src='https://images.unsplash.com/photo-1453906971074-ce568cccbc63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' />} />
         <Router>
-        {/* <header>
-          <Link to="/" className="siteTitle">Music Theory Quizzes</Link>
-        </header> */}
-      
-        {/* <Link to='/count'>Submit Answers and Get Score!</Link> */}
-      
       <div className="section white">
         <div className="row container">
           <header>
@@ -49,15 +43,15 @@ const App = () => {
             <div className = "container">
               <div className ='navButton'>
                 <Link to="/quiz/1" className = "quizLink" label='Basic Intervals'>Basic Intervals</Link>
-                <br/>
                 <Link to="/quiz/2" className = "quizLink" label='Triad Chords'>Triad Chords</Link>
-                <br/>
                 <Link to="/quiz/3" className = "quizLink">Quiz 3</Link>
-                <br/>
               </div>
-              <Switch>
-                <Route path="/quiz/:id" component={Question} />
-              </Switch>
+              <Route>
+                <Route exact path="/quiz/1" render={ () => <Question id="1" /> } />
+                <Route exact path="/quiz/2" render={ () => <Question id="2" />} />
+                <Route exact path="/quiz/3" render={ () => <Question id="3" />} />
+              </Route>
+        
           </div>
           
           {/* ----- Sidenav ----- */}
@@ -150,7 +144,7 @@ const App = () => {
           </div> */}
       </div>
     </div>
-<Parallax image={<img src="https://images.unsplash.com/photo-1542120526-89a7039730ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" />} />
+  <Parallax image={<img src="https://images.unsplash.com/photo-1542120526-89a7039730ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" />} />
       {/* {!isShowing? <h2 onClick={()=>toggleQuiz()} className="quiz1">Basic Intervals</h2> : null} */}
       {/* <h2 onClick={()=>toggleQuiz()} className="quiz1">{data.title}</h2>
       {isShowing ? <Quiz/> : null} */}
