@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Answer from './Answer'
 import axios from 'axios'
 
-const Question = ({match}) => {
+const Question = (props) => {
 
 const [data, setData] = useState({quizzes: []})
 // const [isFilled, setFilled] = useState(false)
@@ -48,7 +48,8 @@ const toggleScored = () => {
 
   useEffect (() => {
     const fetchData = async () => {
-    const response = await axios(`/quizzes/${match.params.id}`, )
+    // const response = await axios(`/quizzes/${match.params.id}`, )
+    const response = await axios(`/quizzes/${props.id}`, )
     // console.log(response.data.questions[0].instructions)
     setData(response.data)
     console.log(response.data);
@@ -217,6 +218,29 @@ return (
             {/* <button>Submit Answers and Get Score!</button> */}
         </form>
         <h4 className={isScored ? 'scoreShowing': 'score'}>Your Score is: {count}/5</h4>
+        <div className={isScored ? 'scoreShowing': 'score'}>
+        <h6>Correct Answers:</h6>
+            {
+                data.questions &&
+                data.questions.map( (question, qindex) => {
+                    return (
+                        <div>
+                        <p>Question {qindex + 1}</p>
+                        {question.answers.map ( (answer, index) => {
+                            return (
+                            <div>
+                            {
+                                answer.is_correct ? <p>{answer.content}</p> : null
+                            }
+                            </div>
+                            )
+                        }
+                        )}
+                        </div>
+                    )
+                })
+            }
+        </div>
           
           
         {/* {
