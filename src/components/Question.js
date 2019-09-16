@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Answer from './Answer'
 import axios from 'axios'
+let baseURL = process.env.REACT_APP_BASEURL
 
 const Question = (props) => {
 
@@ -49,7 +50,7 @@ const toggleScored = () => {
   useEffect (() => {
     const fetchData = async () => {
     // const response = await axios(`/quizzes/${match.params.id}`, )
-    const response = await axios.get(`/quizzes/${props.id}`)
+    const response = await axios.get(`${baseURL}/quizzes/${props.id}`)
     // console.log(response.data.questions[0].instructions)
     setData(response.data)
     console.log(response.data);
