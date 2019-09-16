@@ -21,6 +21,7 @@ let circleColor = 'blank'
 
 const toggleScored = () => {
     setIsScored(!isScored)
+
     // isScored ?  questionShowing = 'questionScored' : questionShowing = 'question' 
     // if (isScored === true) {
     //     questionShowing = 'questionScored' && score = 'scoreShowing'
@@ -144,6 +145,7 @@ const handleOptionChange = event => {
 
 const handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
+
 
     // console.log({selectedOption})
 
