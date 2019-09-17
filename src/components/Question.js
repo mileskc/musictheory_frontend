@@ -4,11 +4,11 @@ import axios from 'axios'
 let baseURL = process.env.REACT_APP_BASEURL
 // let baseURL = 'http://localhost:3000'
 
-if (process.env.NODE_ENV === 'development') {
-    baseURL = 'http://localhost:3000'
-  } else {
-    baseURL = 'https://beyond-measure.herokuapp.com/'
-  }
+// if (process.env.NODE_ENV === 'development') {
+//     baseURL = 'http://localhost:3000'
+//   } else {
+//     baseURL = 'https://beyond-measure.herokuapp.com/'
+//   }
 
 const Question = (props) => {
 
@@ -39,8 +39,8 @@ const toggleScored = () => {
   useEffect (() => {
     const fetchData = async () => {
     // const response = await axios(`/quizzes/${match.params.id}`, )
-    // const response = await axios.get(`${baseURL}/quizzes/${props.id}`)
-    const response = await axios.get(`/quizzes/${props.id}`)
+    const response = await axios.get(`${baseURL}/quizzes/${props.id}`)
+    // const response = await axios.get(`/quizzes/${props.id}`)
     // console.log(response.data.questions[0].instructions)
     setData(response.data)
     console.log(response.data);
