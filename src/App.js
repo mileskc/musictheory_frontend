@@ -37,14 +37,27 @@ const App = () => {
           </header>
           <br/>
           <p className="grey-text text-darken-3 lighten-3">
-            Blah blah music theory
+            Welcome to Beyond Measure! Test your baseline music theory knowledge with these short quizzes to let you know which areas you need to improve! This site employs some abbreviations, so for those who are unsure about some of the answer options, check out the key below.</p>
+          <p className="grey-text text-darken-3 lighten-3 abbreviations">
+            m = minor
+            <br/>
+            min = minor
+            <br/>
+            M = Major
+            <br/>
+            Maj = Major
+            <br/>
+            Aug = Augmented
+            <br/>
+            dim = Diminished
           </p>
 
             <div className = "container">
               <div className ='navButton'>
+                <h3>Quizzes</h3>
                 <Link to="/quiz/1" className = "quizLink" label='Basic Intervals'>Basic Intervals</Link>
                 <Link to="/quiz/2" className = "quizLink" label='Triad Chords'>Triad Chords</Link>
-                <Link to="/quiz/3" className = "quizLink">Quiz 3</Link>
+                <Link to="/quiz/3" className = "quizLink">Key Signatures</Link>
               </div>
               <Route>
                 <Route exact path="/quiz/1" render={ () => <Question id="1" /> } />
@@ -53,95 +66,6 @@ const App = () => {
               </Route>
         
           </div>
-          
-          {/* ----- Sidenav ----- */}
-
-          {/* <div className = "container">
-            <div className ='navButton'>
-            <SideNav trigger={<Button waves="light">Quizzes</Button>} options={{closeOnClick: true}}>
-            <SideNavItem className='linkImage'userView user={{
-                // background: 'https://images.unsplash.com/photo-1453906971074-ce568cccbc63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-                // background: 'https://images.unsplash.com/photo-1542120526-89a7039730ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80',
-                name: 'Quiz List',
-              }} />
-              <SideNavItem href="#!icon"><Link to="/quiz/1" className = "quizLink" label='Basic Intervals'>Basic Intervals</Link></SideNavItem>
-              <SideNavItem href="#!second"><Link to="/quiz/2" className = "quizLink" label='Triad Chords'>Triad Chords</Link></SideNavItem>
-              <SideNavItem waves href="#!third"><Link to="/quiz/3" className = "quizLink">Quiz 3</Link></SideNavItem>
-            </SideNav>
-            </div>
-            <Switch>
-              <Route path="/quiz/:id" component={Question} />
-            </Switch>
-          </div> */}
-
-          {/* ----- Attempt at Select drop down ----- */}
-
-          {/* <div className = "container">
-            <div className ='navButton'>
-            <Select value="">
-            <option value="" disabled>
-              Select a Quiz
-            </option>
-            <option value="1">
-              <Link to="/quiz/1" className = "quizLink" label='Basic Intervals'>Basic Intervals</Link>
-            </option>
-            <option value="2">
-              <Link to="/quiz/2" className = "quizLink" label='Triad Chords'>Triad Chords</Link>
-            </option>
-            <option value="3">
-              <Link to="/quiz/3" className = "quizLink">Quiz 3</Link>
-            </option>
-            </Select>
-            </div>
-            <Switch>
-              <Route path="/quiz/:id" component={Question} />
-            </Switch>
-          </div> */}
-
-          {/* ----- Navbar but turns to hamburger on mobile ----*/}
-
-          {/* <div className = "container">
-            <div className ='navButton'>
-            <Navbar className='navBar' brand={<a />} alignLinks="right">
-            <NavItem href="">
-              <Link to="/quiz/1" className = "quizLink" label='Basic Intervals'>Basic Intervals</Link>
-            </NavItem>
-            <NavItem href="">
-            <Link to="/quiz/2" className = "quizLink" label='Triad Chords'>Triad Chords</Link>
-            </NavItem>
-            <NavItem href="">
-            <Link to="/quiz/3" className = "quizLink">Quiz 3</Link>
-            </NavItem>
-          
-            </Navbar>
-            </div>
-            <Switch>
-              <Route path="/quiz/:id" component={Question} />
-            </Switch>
-          </div> */}
-
-          {/* ----- react materialize drop down attempt  --- */}
-          {/* <div className = "container">
-            <div className ='navButton'>
-            <Navbar className='navBar' brand={<a />} alignLinks="right">
-            <Dropdown name="Drop"trigger={<a />}>
-                <a href="">
-                  <Link to="/quiz/1" className = "quizLink" label='Basic Intervals'>Basic Intervals</Link>
-                </a>
-                <a href="">
-                  <Link to="/quiz/2" className = "quizLink" label='Triad Chords'>Triad Chords</Link>
-                </a>
-                <Divider/>
-                <a href="">
-                  <Link to="/quiz/3" className = "quizLink">Quiz 3</Link>
-                </a>
-            </Dropdown>
-            </Navbar>
-            </div>
-            <Switch>
-              <Route path="/quiz/:id" component={Question} />
-            </Switch>
-          </div> */}
       </div>
     </div>
   <Parallax image={<img src="https://images.unsplash.com/photo-1542120526-89a7039730ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" />} />

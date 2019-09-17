@@ -29,25 +29,7 @@ let circleColor = 'blank'
 
 const toggleScored = () => {
     setIsScored(!isScored)
-    // isScored ?  questionShowing = 'questionScored' : questionShowing = 'question' 
-    // if (isScored === true) {
-    //     questionShowing = 'questionScored' && score = 'scoreShowing'
-    // } else {
-    //     questionShowing = 'question' && score = 'score'
-    // }
-
-    // if (isScored === true) {
-    //     questionShowing = 'questionScored'
-    // } else {
-    //     questionShowing = 'question'
-    // }
-
-    // if (isScored === true) {
-    //     score = 'scoreShowing'
-    // } else {
-    //     score = 'score'
-    // }
-
+    
     console.log(score)
     console.log('isScored')
     console.log(questionShowing)

@@ -44,19 +44,15 @@ header {
   /* margin: 0 auto; */
 }
 
-/* .section {
-  height: 300px;
-} */
-
-/* nav {
+.abbreviations {
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  background-color: whitesmoke;
-  height: 400px;
-  width: 19%;
-  font-size: 25px;
-} */
+}
+
+.grey-text {
+  font-size: 1.3rem;
+}
+
 
 /* ---- Navigation ---- */
 
@@ -84,21 +80,15 @@ nav ul {
 
 .navButton {
   display: flex;
-  width: 100%;
+  width: 60%;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(202, 231, 242);
+  border: 5px double gray;
+  border-radius: 3px;
+
 }
-
-
-
-/* #sidenav_2.sidenav {
-  vertical-align: center;
-} */
-
-/* .SideNav {
-  justify-content: left;
-} */
 
 .quizLink {
   text-decoration: none;
@@ -107,16 +97,7 @@ nav ul {
   margin: 5px;
 }
 
-/* .user-view {
-  height: 200px;
-  width: 100%;
-  background-size: cover;
-} */
-
-
 /* ---- Quiz ---- */
-
-
 
 .quiz {
   display: flex;
@@ -135,11 +116,6 @@ nav ul {
   box-shadow: 2px 2px 5px gray;
   padding: 5px;
 }
-
-/* .answer{
-  display: flex;
-  flex-direction: column;
-} */
 
 .quizImg {
   width: 40%;
@@ -161,6 +137,7 @@ nav ul {
   width: 80%;
   border: 1px solid gray;
   box-shadow: 2px 2px 5px gray;
+  border-radius: 3px;
 }
 
 .questionNumber {
@@ -173,16 +150,22 @@ nav ul {
   padding: 3px; */
   box-shadow: 2px 2px 5px gray;
   border: 1px solid black;
+  border-radius: 2px;
 }
 
 .question {
   border: solid 1px black;
+  border-radius: 2px;
   /* display: block; */
   display: flex;
   flex-direction: column;
-  background-color: rgb(111, 123, 164);
+  background-color: rgb(3, 83, 133);
   margin: 0 auto;
   text-align: center;
+}
+
+.instructions {
+  font-size: 1.4rem;
 }
 
 .answer {
