@@ -111,7 +111,7 @@ nav ul {
 }
 
 .quizLink:hover {
-  color: rgb(17, 17, 150);
+  color: rgb(3, 83, 133);
 }
 
 /* ---- Quiz ---- */
@@ -243,6 +243,8 @@ span {
 .answerKey {
   font-size: 1.5rem;
   font-family: 'Playfair Display', serif;
+  /* color: rgb(3, 83, 133); */
+  text-decoration: underline;
 }
 
 .questionKey {
@@ -250,7 +252,8 @@ span {
   width: 70%;
   border: 1px solid black;
   border-radius: 3px;
-  background-color: rgb(244, 247, 250);
+  /* background-color: rgb(244, 247, 250); */
+  background-color: white;
   color: black;
 }
 
