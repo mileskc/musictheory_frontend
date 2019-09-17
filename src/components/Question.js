@@ -2,6 +2,13 @@ import React, {useState, useEffect} from 'react'
 import Answer from './Answer'
 import axios from 'axios'
 let baseURL = process.env.REACT_APP_BASEURL
+// let baseURL = 'http://localhost:3000'
+
+// if (process.env.NODE_ENV === 'development') {
+//     baseURL = 'http://localhost:3000'
+//   } else {
+//     baseURL = 'https://beyond-measure.herokuapp.com/'
+//   }
 
 const Question = (props) => {
 

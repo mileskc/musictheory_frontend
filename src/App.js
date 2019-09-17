@@ -32,7 +32,7 @@ const App = () => {
         <div className="row container">
           <header>
           <h2 className="header">
-            <Link to="/" className="siteTitle">Music Theory Quizzes</Link>
+            <Link to="/" className="siteTitle">Beyond Measure</Link>
           </h2>
           </header>
           <br/>
