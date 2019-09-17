@@ -29,7 +29,7 @@ let circleColor = 'blank'
 
 const toggleScored = () => {
     setIsScored(!isScored)
-    
+
     console.log(score)
     console.log('isScored')
     console.log(questionShowing)
@@ -156,8 +156,8 @@ return (
         {/* // <div className = {questionShowing}> */}
         <form className={isScored ? 'questionScored': 'question'} onSubmit={handleFormSubmit}>
             <div className = "quizHeader">
-                <h2 className = "questionNumber">{data.title}</h2>
-                <h3>{data.description}</h3>
+                <h2 className = "quizTitle">{data.title}</h2>
+                <h3 className = "quizDescription" >{data.description}</h3>
                 <img className="quizImg" src ={data.img_url}/>
             </div>
         <br/>
@@ -187,13 +187,6 @@ return (
                                 <span>{answer.content}</span>
                             </label>
                             </p>
-                        //     <RadioGroup
-                        //     name="size"
-                        //     withGap
-                        //     label="T-Shirt Size"
-                        //     value="xl"
-                        //     options={[{label: 'XL',value: 'xl'},{label: 'L',value: 'l'},{label: 'M',value: 'm'}]}
-                        //   />
                         )
                     })
                     }
@@ -204,24 +197,21 @@ return (
           }
             <br/>
             <button className="submit" onClick={()=>toggleScored()} type="submit" value ="Submit Answers and Get Score!">Submit Answers and Get Score!</button>
-        
-            {/* <h4 className="score">Your Score is: {count}/5</h4> */}
-            {/* <button>Submit Answers and Get Score!</button> */}
         </form>
         <h4 className={isScored ? 'scoreShowing': 'score'}>Your Score is: {count}/5</h4>
-        <div className={isScored ? 'scoreShowing': 'score'}>
-        <h6>Correct Answers:</h6>
+        <div className={isScored ? 'scoreShowing questionKey': 'score'}>
+        <h6 className ='correctAnswers'>Correct Answers:</h6>
             {
                 data.questions &&
                 data.questions.map( (question, qindex) => {
                     return (
                         <div>
-                        <p>Question {qindex + 1}</p>
+                        <p className='questionKeyList'>Question {qindex + 1}</p>
                         {question.answers.map ( (answer, index) => {
                             return (
                             <div>
                             {
-                                answer.is_correct ? <p>{answer.content}</p> : null
+                                answer.is_correct ? <p className ='answerKey'>{answer.content}</p> : null
                             }
                             </div>
                             )

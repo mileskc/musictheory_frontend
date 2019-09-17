@@ -54,7 +54,7 @@ const App = () => {
 
             <div className = "container">
               <div className ='navButton'>
-                <h3>Quizzes</h3>
+                <h3 className = "quizList">Quizzes</h3>
                 <Link to="/quiz/1" className = "quizLink" label='Basic Intervals'>Basic Intervals</Link>
                 <Link to="/quiz/2" className = "quizLink" label='Triad Chords'>Triad Chords</Link>
                 <Link to="/quiz/3" className = "quizLink">Key Signatures</Link>
