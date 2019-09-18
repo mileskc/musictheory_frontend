@@ -24,6 +24,6 @@ Bar None was built by creating 2 separate Github repositories - one for the fron
 
 In addition to the information in the database, Bar None accesses a 3rd party API, TheCocktailDB, to allow users to search for cocktails for inspiration. Users are able to search by name, ingredient, or click a button to retrieve a random cocktail from the API.
 
-## Screen shots of App:
+## Screenshot of App:
 ![Site Screenshot](https://github.com/mileskc/musictheory_frontend/blob/master/images/Beyond%20Measure%20Screenshot.png)
 
