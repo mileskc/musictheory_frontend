@@ -19,10 +19,10 @@ https://beyond-measure.netlify.com/
 * Node.js
 
 ## Approach Taken:
+Beyond Measure was built by creating 2 separate Github repositories - one for the front and and one for the backend. The backend was built with Rails and Postgres with three models connected in nested one-to-many relationships. 
 
-Bar None was built by creating 2 separate Github repositories - one for the front and and one for the backend. Once the backend was built out and tested by curling the routes in the terminal, the front end react app was fleshed out. The site began with rendering seed data for popular cocktails. Once the cocktails were rendered, the app was developed into full CRUD by allowing users to add their own cocktails and delete any cocktails added to the database. When a user clicks on a cocktail, a modal appears with information about that particular cocktail. Within this show page users are also able to mark a cocktail within the database as a favorite. A star will then appear on the corresponding card for that cocktail. 
+The front end was created using React. React Router was implemented in order to direct the page to the selected quiz. The quiz component uses an axios call to get the data from the back end. It loops through each question and the corresponding answers in order to display them on the page. As the user selects each response from the multiple choice options, a count variable is increased depending on whether or not the answer is correct. Once the user submits their responses, the resulting score displays on the page along with the correct answers.
 
-In addition to the information in the database, Bar None accesses a 3rd party API, TheCocktailDB, to allow users to search for cocktails for inspiration. Users are able to search by name, ingredient, or click a button to retrieve a random cocktail from the API.
 
 ## Screenshot of App:
 ![Site Screenshot](https://github.com/mileskc/musictheory_frontend/blob/master/images/Beyond%20Measure%20Screenshot.png)
