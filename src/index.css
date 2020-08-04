@@ -1,16 +1,4 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-} */
 #root > div > div {
   z-index: 99999 !important;
 }
@@ -22,15 +10,6 @@ code {
 
 /* Main Page */
 
-/* .siteTitle {
-  display: flex;
-  font-size: 50px;
-  justify-content: left;
-  margin: 10px;
-  text-decoration: none;
-  color: black;
-} */
-
 
 header {
   width: 100%;
@@ -41,7 +20,6 @@ header {
   width: 100%;
   justify-content: center;
   flex-wrap: wrap;
-  /* margin: 0 auto; */
 }
 
 .siteTitle {
@@ -89,7 +67,6 @@ nav ul {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* background-color: rgb(242, 251, 255); */
   border: 5px double gray;
   border-radius: 3px;
   margin: 10px;
@@ -98,7 +75,6 @@ nav ul {
 .quizList {
   border: 1px solid black;
   padding: 8px;
-  /* background-color: rgb(3, 83, 133); */
   color: rgb(3, 83, 133);
 }
 
@@ -121,7 +97,6 @@ nav ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* width: 79%; */
   margin: 10px;
   width: 95%;
 }
@@ -161,7 +136,6 @@ nav ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: rgb(244, 247, 250); */
   margin: 15px auto;
   width: 80%;
   border: 1px solid black;
@@ -177,8 +151,6 @@ nav ul {
 
 .questionImg {
   width: 60%;
-  /* border: solid 1px gray;
-  padding: 3px; */
   box-shadow: 2px 2px 5px gray;
   border: 1px solid black;
   border-radius: 2px;
@@ -187,10 +159,8 @@ nav ul {
 .question {
   border: solid 1px black;
   border-radius: 2px;
-  /* display: block; */
   display: flex;
   flex-direction: column;
-  /* background-color: rgb(3, 83, 133); */
   margin: 0 auto;
   text-align: center;
   background-color: rgb(244, 247, 250);
@@ -232,7 +202,6 @@ span {
   margin: 40px auto;
   background-color: rgb(3, 83, 133);
   width: 100%;
-  /* height: 100px; */
   padding: 20px;
   color: white;
   border: 1px solid black;
@@ -243,7 +212,6 @@ span {
 .answerKey {
   font-size: 1.5rem;
   font-family: 'Playfair Display', serif;
-  /* color: rgb(3, 83, 133); */
   text-decoration: underline;
 }
 
