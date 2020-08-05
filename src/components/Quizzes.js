@@ -21,13 +21,15 @@ const Quizzes = (props) => {
 
   return (
     <>
-      {props.data.length ? props.data.map(quiz =>
-        <Link to={`/quizzes/${quiz.id}`}><h1>{quiz.title}</h1></Link>
-      ) : null}
+      <div className="quizList">
+        {props.data.length ? props.data.map(quiz =>
+          <Link to={`/quizzes/${quiz.id}`}><h1>{quiz.title}</h1></Link>
+        ) : null}
 
-      {/* <Link to="/quiz/1" className="quizLink" label='Basic Intervals'>Basic Intervals</Link>
+        {/* <Link to="/quiz/1" className="quizLink" label='Basic Intervals'>Basic Intervals</Link>
       <Link to="/quiz/2" className="quizLink" label='Triad Chords'>Triad Chords</Link>
       <Link to="/quiz/3" className="quizLink">Key Signatures</Link> */}
+      </div>
     </>
   )
 }
