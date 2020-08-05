@@ -4,6 +4,7 @@ import axios from 'axios'
 import Question from './components/Question'
 import Quizzes from './components/Quizzes'
 import Home from './components/Home'
+import Score from './components/Score'
 import './App.css';
 let baseURL = process.env.REACT_APP_BASEURL
 
@@ -31,6 +32,8 @@ const App = () => {
         <Route exact path="/quizzes" render={(props) =>
           <Quizzes data={data} {...props} />} />
         <Route exact path="/quizzes/:id" render={(props) => <Question data={data}{...props} />} />
+        <Route exact path="/score/:id" render={(props) => <Score data={data}{...props} />} />
+
       </Switch>
 
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 // import axios from 'axios'
 let baseURL = process.env.REACT_APP_BASEURL
 
@@ -22,8 +22,15 @@ const Question = (props) => {
   // console.log(quizData)
 
 
-  const toggleScored = () => {
-    setIsScored(!isScored)
+  // const toggleScored = () => {
+  //   setIsScored(!isScored)
+  // }
+
+  const submitScore = () => {
+    localStorage.setItem('count', count.toString())
+    const score = localStorage.getItem('count')
+    console.log(score)
+
   }
 
   // const fetchData = async () => {
@@ -139,9 +146,9 @@ const Question = (props) => {
           )
         })}
         <br />
-        <button className="submit" onClick={() => toggleScored()} type="submit" value="Submit Answers and Get Score!">Submit Answers and Get Score!</button>
+        <Link to={`/score/${params.id}`}><button className="submit" onClick={() => submitScore()} type="submit" value="Submit Answers and Get Score!">Submit Answers and Get Score!</button></Link>
       </form>
-      <h4 className={isScored ? 'scoreShowing' : 'score'}>Your Score is: {count}/5</h4>
+      {/* <h4 className={isScored ? 'scoreShowing' : 'score'}>Your Score is: {count}/5</h4>
       <div className={isScored ? 'scoreShowing questionKey' : 'score'}>
         <h6 className='correctAnswers'>Correct Answers:</h6>
         {data && data.questions.map((question, qindex) => {
@@ -161,7 +168,7 @@ const Question = (props) => {
           )
         })
         }
-      </div>
+      </div> */}
       <br />
     </div>
   )
