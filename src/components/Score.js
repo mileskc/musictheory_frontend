@@ -23,21 +23,23 @@ const Score = (props) => {
 
   console.log(score)
   return (
-    <div>
+    <div className="score">
       <h1 className='scoreShowing'>Your score is {score}/5</h1>
       <h2>Correct Answers:</h2>
-      {data && data.questions.map((question, index) => {
-        let correctAnswer = question.answers.filter(answer => answer.is_correct === true);
-        let questionNum = index + 1
-        return (
-          <div>
-            <h3>Question {questionNum}</h3>
-            <h2>{correctAnswer[0].content}</h2>
-          </div>
-        )
-        console.log(correctAnswer[0].content)
-      }
-      )}
+      <div className="questionKey">
+        {data && data.questions.map((question, index) => {
+          let correctAnswer = question.answers.filter(answer => answer.is_correct === true);
+          let questionNum = index + 1
+          return (
+            <div>
+              <h3 className="questionKeyList">Question {questionNum}</h3>
+              <h2 className="correctAnswers">{correctAnswer[0].content}</h2>
+            </div>
+          )
+
+        }
+        )}
+      </div>
     </div >
 
 
