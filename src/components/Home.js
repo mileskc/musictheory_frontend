@@ -14,7 +14,7 @@ const Home = () => {
           </div>
           <header>
             <h2 className="header">
-              <Link to="/" className="siteTitle">Beyond Measure</Link>
+              <Link to="/" className="site-title">Beyond Measure</Link>
             </h2>
           </header>
           <br />

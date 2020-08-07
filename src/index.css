@@ -22,7 +22,7 @@ header {
   flex-wrap: wrap;
 }
 
-.siteTitle {
+.site-title {
   font-family: 'Domine', serif;
   color: rgb(3, 83, 133);
 }
@@ -41,7 +41,6 @@ header {
 
 .nav {
   display: flex;
-  /* justify-content: space-between; */
   width: 100%;
   margin: 0px 5px;
 }
@@ -72,7 +71,7 @@ header {
   background-color: rgb(111, 123, 164);
 }
 
-.navButton {
+.nav-button {
   display: flex;
   flex: 1;
   justify-content: center;
@@ -94,7 +93,7 @@ header {
   align-items: center;
 }
 
-.quizList {
+.quiz-list {
   border: 5px double gray;
   padding: 30px;
   color: rgb(3, 83, 133);
@@ -108,7 +107,7 @@ header {
   align-items: center;
 }
 
-.quizLink {
+.quiz-link {
   text-decoration: none;
   color: black;
   font-size: 55px;
@@ -133,18 +132,18 @@ header {
   width: 95%;
 }
 
-.quizTitle {
+.quiz-title {
   font-family: 'Playfair Display', serif;
   font-weight: bold;
   color: rgb(3, 83, 133);
 }
 
-.quizDescription {
+.quiz-description {
   font-family: 'Lato', sans-serif;
   font-weight: lighter;
 }
 
-.quizHeader {
+.quiz-header {
   background-color: white;
   width: 80%;
   margin: 15px auto;
@@ -153,7 +152,7 @@ header {
   padding: 5px;
 }
 
-.quizImg {
+.quiz-img {
   width: 40%;
   margin-bottom: 40px;
 }
@@ -164,7 +163,7 @@ header {
 
 /* ---- Each Question ---- */
 
-.questionBox {
+.question-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -176,12 +175,12 @@ header {
   background-color: white;
 }
 
-.questionNumber {
+.question-number {
   font-family: 'Playfair Display', serif;
   color: rgb(3, 83, 133);
 }
 
-.questionImg {
+.question-img {
   width: 60%;
   box-shadow: 2px 2px 5px gray;
   border: 1px solid black;
@@ -231,7 +230,7 @@ span {
   align-items: center;
 }
 
-.scoreShowing {
+.score-showing {
   display:block;
   font-size: 50px;
   margin: 40px auto;
@@ -244,13 +243,13 @@ span {
   font-family: 'Lato', sans-serif;
 }
 
-.answerKey {
+.answer-key {
   font-size: 1.5rem;
   font-family: 'Playfair Display', serif;
   text-decoration: underline;
 }
 
-.questionKey {
+.question-key {
   font-size: 1.8rem;
   width: 70%;
   border: 1px solid black;
@@ -259,11 +258,11 @@ span {
   color: black;
 }
 
-.questionKeyList {
+.question-key-list {
   font-family: 'Montserrat', sans-serif;
 }
 
-.correctAnswers {
+.correct-answers {
   font-size: 2.2rem;
   font-family: 'Playfair Display', serif;
   color: rgb(3, 83, 133);
@@ -287,10 +286,14 @@ span {
   color: black;
 }
 
-/* @media (max-width) {
-  .navBar {
-    width: 100%;
+@media only screen and (max-width: 800px) {
+  .nav-button {
+    border: none;
   }
-} */
 
+  .logo {
+    height: 50px;
+    width: 50px;
+  }
+}
 

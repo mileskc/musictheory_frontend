@@ -11,7 +11,6 @@ const Quiz = (props) => {
   const [selectedOption4, setSelectedOption4] = useState(false)
   const [selectedOption5, setSelectedOption5] = useState(false)
   const [count, setCount] = useState(0)
-  const [isScored, setIsScored] = useState(false)
 
   let params = props.match.params
 
@@ -94,21 +93,21 @@ const Quiz = (props) => {
     <div className="quiz">
       <Nav />
       <form
-        className={isScored ? 'questionScored' : 'question'} onSubmit={handleFormSubmit}
+        className={'question'} onSubmit={handleFormSubmit}
       >
-        {data && <div className="quizHeader">
-          <h2 className="quizTitle">{data.title}</h2>
-          <h3 className="quizDescription" >{data.description}</h3>
-          <img className="quizImg" src={data.img_url} />
+        {data && <div className="quiz-header">
+          <h2 className="quiz-title">{data.title}</h2>
+          <h3 className="quiz-description" >{data.description}</h3>
+          <img className="quiz-img" src={data.img_url} />
         </div>
         }
         <br />
         {data && data.questions.map((question, qindex) => {
 
           return (
-            <div id={`question${qindex}`} className="questionBox">
-              <h2 className="questionNumber">Question {qindex + 1}</h2>
-              <img className="questionImg" src={question.img_url} />
+            <div id={`question${qindex}`} className="question-box">
+              <h2 className="question-number">Question {qindex + 1}</h2>
+              <img className="question-img" src={question.img_url} />
               <h2 className="instructions">{question.instructions}</h2>
               {question.answers.map((answer, index) => {
                 return (

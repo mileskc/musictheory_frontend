@@ -27,16 +27,16 @@ const Score = (props) => {
   return (
     <div className="score">
       <Nav />
-      <h1 className='scoreShowing'>Your score is {score}/5</h1>
+      <h1 className='score-showing'>Your score is {score}/5</h1>
       <h2>Correct Answers:</h2>
-      <div className="questionKey">
+      <div className="question-key">
         {data && data.questions.map((question, index) => {
           let correctAnswer = question.answers.filter(answer => answer.is_correct === true);
           let questionNum = index + 1
           return (
             <div>
-              <h3 className="questionKeyList">Question {questionNum}</h3>
-              <h2 className="correctAnswers">{correctAnswer[0].content}</h2>
+              <h3 className="question-key-list">Question {questionNum}</h3>
+              <h2 className="correct-answers">{correctAnswer[0].content}</h2>
             </div>
           )
 
