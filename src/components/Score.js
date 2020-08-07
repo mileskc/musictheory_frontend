@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Nav from './Nav'
 
 const Score = (props) => {
   const [score, setScore] = useState(0)
@@ -24,6 +25,7 @@ const Score = (props) => {
   console.log(score)
   return (
     <div className="score">
+      <Nav />
       <h1 className='scoreShowing'>Your score is {score}/5</h1>
       <h2>Correct Answers:</h2>
       <div className="questionKey">

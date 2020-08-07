@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import Nav from './Nav'
 // import axios from 'axios'
 let baseURL = process.env.REACT_APP_BASEURL
 
@@ -108,6 +109,7 @@ const Question = (props) => {
 
   return (
     <div className="quiz">
+      <Nav />
       <form
         className={isScored ? 'questionScored' : 'question'} onSubmit={handleFormSubmit}
       >

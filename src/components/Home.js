@@ -1,6 +1,7 @@
 import React from 'react'
 import { Parallax } from 'react-materialize';
 import { Link } from 'react-router-dom'
+import Nav from './Nav'
 
 const Home = () => {
   return (
@@ -8,6 +9,9 @@ const Home = () => {
       <Parallax image={<img src='https://images.unsplash.com/photo-1453906971074-ce568cccbc63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' />} />
       <div className="section white">
         <div className="row container">
+          <div className="container">
+            <Nav />
+          </div>
           <header>
             <h2 className="header">
               <Link to="/" className="siteTitle">Beyond Measure</Link>
@@ -29,12 +33,6 @@ const Home = () => {
               <br />
               dim = Diminished
             </p>
-
-          <div className="container">
-            <div className='navButton'>
-              <Link to='/quizzes'><h3 className="quizList">Quizzes</h3></Link>
-            </div>
-          </div>
         </div>
       </div>
       <Parallax image={<img src="https://images.unsplash.com/photo-1542120526-89a7039730ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" />} />
