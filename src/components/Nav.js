@@ -7,7 +7,7 @@ const Nav = () => {
 
       <div className="nav" >
         <div className="logo-container">
-          <Link to='/'><img className="logo" src="https://i.imgur.com/BoTe4sD.png" /></Link>
+          <Link to='/'><img alt="music-book-logo" className="logo" src="https://i.imgur.com/BoTe4sD.png" /></Link>
         </div>
         <div className='nav-button'>
           <Link to='/quizzes'><h3 className="quiz-list">Quizzes</h3></Link>

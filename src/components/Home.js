@@ -6,7 +6,7 @@ import Nav from './Nav'
 const Home = () => {
   return (
     <>
-      <Parallax image={<img src='https://images.unsplash.com/photo-1453906971074-ce568cccbc63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' />} />
+      <Parallax image={<img alt="music-score" src='https://images.unsplash.com/photo-1453906971074-ce568cccbc63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' />} />
       <div className="section white">
         <div className="row container">
           <div className="container">
@@ -35,7 +35,7 @@ const Home = () => {
             </p>
         </div>
       </div>
-      <Parallax image={<img src="https://images.unsplash.com/photo-1542120526-89a7039730ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" />} />
+      <Parallax image={<img alt="piano-keys" src="https://images.unsplash.com/photo-1542120526-89a7039730ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" />} />
     </>
   )
 }

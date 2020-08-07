@@ -34,7 +34,7 @@ const Score = (props) => {
           let correctAnswer = question.answers.filter(answer => answer.is_correct === true);
           let questionNum = index + 1
           return (
-            <div>
+            <div key={index}>
               <h3 className="question-key-list">Question {questionNum}</h3>
               <h2 className="correct-answers">{correctAnswer[0].content}</h2>
             </div>

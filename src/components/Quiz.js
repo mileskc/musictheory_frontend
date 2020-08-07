@@ -78,8 +78,8 @@ const Quiz = (props) => {
         }
         setSelectedOption5(val)
         break
-
-
+      default:
+        console.log("Oops! That's not an available answer")
     }
 
   }
@@ -98,20 +98,20 @@ const Quiz = (props) => {
         {data && <div className="quiz-header">
           <h2 className="quiz-title">{data.title}</h2>
           <h3 className="quiz-description" >{data.description}</h3>
-          <img className="quiz-img" src={data.img_url} />
+          <img alt="quiz-img" className="quiz-img" src={data.img_url} />
         </div>
         }
         <br />
         {data && data.questions.map((question, qindex) => {
 
           return (
-            <div id={`question${qindex}`} className="question-box">
+            <div key={qindex} id={`question${qindex}`} className="question-box">
               <h2 className="question-number">Question {qindex + 1}</h2>
-              <img className="question-img" src={question.img_url} />
+              <img alt="question-img" className="question-img" src={question.img_url} />
               <h2 className="instructions">{question.instructions}</h2>
               {question.answers.map((answer, index) => {
                 return (
-                  <p>
+                  <p key={index}>
                     <label>
                       <input
                         onChange={handleOptionChange}

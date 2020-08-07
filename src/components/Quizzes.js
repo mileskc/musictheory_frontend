@@ -9,8 +9,8 @@ const Quizzes = (props) => {
       <Nav />
       <div id="quizlist-container" className="quiz-list">
 
-        {props.data.length ? props.data.map(quiz =>
-          <Link to={`/quizzes/${quiz.id}`}><h1 className="quiz-link">{quiz.title}</h1></Link>
+        {props.data.length ? props.data.map((quiz, index) =>
+          <Link key={index} to={`/quizzes/${quiz.id}`}><h1 className="quiz-link">{quiz.title}</h1></Link>
         ) : null}
       </div>
     </div>
