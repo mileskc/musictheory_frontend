@@ -1,61 +1,46 @@
-import React, {useState} from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import { Parallax} from 'react-materialize';
-import Question from './components/Question'
+import React, { useState, useEffect } from 'react';
+import { Route, Switch } from "react-router-dom"
+import axios from 'axios'
+import Quiz from './components/Quiz'
+import Quizzes from './components/Quizzes'
+import Home from './components/Home'
+import Score from './components/Score'
 import './App.css';
+let baseURL = process.env.REACT_APP_BASEURL
 
 const App = () => {
+  const [data, setData] = useState([])
+
+  const fetchData = async () => {
+    const response = await axios.get(`${baseURL}/quizzes`)
+    if (response.data.length > 0) {
+      setData(response.data)
+    }
+  }
+  useEffect(() => {
+
+
+    fetchData();
+  }, []);
 
   return (
-    <div className="App">
-        <Parallax image={<img src='https://images.unsplash.com/photo-1453906971074-ce568cccbc63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' />} />
-        <Router>
-        <div className="section white">
-          <div className="row container">
-            <header>
-            <h2 className="header">
-              <Link to="/" className="siteTitle">Beyond Measure</Link>
-            </h2>
-            </header>
-            <br/>
-            <p className="grey-text text-darken-3 lighten-3">
-              Welcome to Beyond Measure! Test your baseline music theory knowledge with these short quizzes to let you know which areas you need to improve! This site employs some abbreviations, so for those who are unsure about some of the answer options, check out the key below.</p>
-            <p className="grey-text text-darken-3 lighten-3 abbreviations">
-              m = minor
-              <br/>
-              min = minor
-              <br/>
-              M = Major
-              <br/>
-              Maj = Major
-              <br/>
-              Aug = Augmented
-              <br/>
-              dim = Diminished
-            </p>
+    <div className="app">
 
-              <div className = "container">
-                <div className ='navButton'>
-                  <h3 className = "quizList">Quizzes</h3>
-                  <Link to="/quiz/1" className = "quizLink" label='Basic Intervals'>Basic Intervals</Link>
-                  <Link to="/quiz/2" className = "quizLink" label='Triad Chords'>Triad Chords</Link>
-                  <Link to="/quiz/3" className = "quizLink">Key Signatures</Link>
-                </div>
-                <Route>
-                  <Route exact path="/quiz/1" render={ () => <Question id="1" /> } />
-                  <Route exact path="/quiz/2" render={ () => <Question id="2" />} />
-                  <Route exact path="/quiz/3" render={ () => <Question id="3" />} />
-                </Route>
-          
-            </div>
-        </div>
-      </div>
-      <Parallax image={<img src="https://images.unsplash.com/photo-1542120526-89a7039730ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" />} />
-      </Router>
+      <Switch>
+        <Route exact path="/" render={() =>
+          <Home data={data} />} />
+        <Route exact path="/quizzes" render={(props) =>
+          <Quizzes data={data} {...props} />} />
+        <Route exact path="/quizzes/:id" render={(props) => <Quiz data={data}{...props} />} />
+        <Route exact path="/score/:id" render={(props) => <Score data={data}{...props} />} />
+
+      </Switch>
+
+
     </div>
-    
+
   );
-  
+
 }
 
 
