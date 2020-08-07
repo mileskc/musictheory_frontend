@@ -95,17 +95,27 @@ header {
 }
 
 .quizList {
-  border: 1px solid black;
-  padding: 8px;
+  border: 5px double gray;
+  padding: 30px;
   color: rgb(3, 83, 133);
+}
+
+#quizlist-container {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .quizLink {
   text-decoration: none;
   color: black;
-  font-size: 25px;
-  margin: 5px;
+  font-size: 55px;
+  margin: 20px;
   font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  color: rgb(3, 83, 133);
 }
 
 .quizLink:hover {

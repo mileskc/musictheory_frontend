@@ -8,10 +8,10 @@ const Quizzes = (props) => {
   return (
     <div className="quizzes" >
       <Nav />
-      <div className="quizList">
+      <div id="quizlist-container" className="quizList">
 
         {props.data.length ? props.data.map(quiz =>
-          <Link to={`/quizzes/${quiz.id}`}><h1>{quiz.title}</h1></Link>
+          <Link to={`/quizzes/${quiz.id}`}><h1 className="quizLink">{quiz.title}</h1></Link>
         ) : null}
       </div>
     </div>
