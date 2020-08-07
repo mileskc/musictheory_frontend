@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from "react-router-dom"
 import axios from 'axios'
-import Question from './components/Question'
+import Quiz from './components/Quiz'
 import Quizzes from './components/Quizzes'
 import Home from './components/Home'
 import Score from './components/Score'
@@ -31,7 +31,7 @@ const App = () => {
           <Home data={data} />} />
         <Route exact path="/quizzes" render={(props) =>
           <Quizzes data={data} {...props} />} />
-        <Route exact path="/quizzes/:id" render={(props) => <Question data={data}{...props} />} />
+        <Route exact path="/quizzes/:id" render={(props) => <Quiz data={data}{...props} />} />
         <Route exact path="/score/:id" render={(props) => <Score data={data}{...props} />} />
 
       </Switch>

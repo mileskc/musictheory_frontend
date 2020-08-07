@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Nav from './Nav'
-// import axios from 'axios'
-let baseURL = process.env.REACT_APP_BASEURL
 
-const Question = (props) => {
 
-  // const [data, setData] = useState({})
+const Quiz = (props) => {
+
   const [selectedOption1, setSelectedOption1] = useState(false)
   const [selectedOption2, setSelectedOption2] = useState(false)
   const [selectedOption3, setSelectedOption3] = useState(false)
@@ -17,27 +15,12 @@ const Question = (props) => {
 
   let params = props.match.params
 
-  // console.log(props.data)
-  // console.log(params.id)
-  // let quizData = props.data.find(quiz => quiz.id === parseInt(params.id))
-  // console.log(quizData)
-
-
-  // const toggleScored = () => {
-  //   setIsScored(!isScored)
-  // }
-
   const submitScore = () => {
     localStorage.setItem('count', count.toString())
     const score = localStorage.getItem('count')
     console.log(score)
 
   }
-
-  // const fetchData = async () => {
-  //     const response = await axios.get(`${baseURL}/quizzes/${props.id}`)
-  //     setData(response.data)
-  // }
 
   let data = {}
   console.log(data)
@@ -150,30 +133,9 @@ const Question = (props) => {
         <br />
         <Link to={`/score/${params.id}`}><button className="submit" onClick={() => submitScore()} type="submit" value="Submit Answers and Get Score!">Submit Answers and Get Score!</button></Link>
       </form>
-      {/* <h4 className={isScored ? 'scoreShowing' : 'score'}>Your Score is: {count}/5</h4>
-      <div className={isScored ? 'scoreShowing questionKey' : 'score'}>
-        <h6 className='correctAnswers'>Correct Answers:</h6>
-        {data && data.questions.map((question, qindex) => {
-          return (
-            <div>
-              <p className='questionKeyList'>Question {qindex + 1}</p>
-              {question.answers.map((answer, index) => {
-                return (
-                  <div>
-                    {
-                      answer.is_correct ? <p className='answerKey'>{answer.content}</p> : null
-                    }
-                  </div>
-                )
-              })}
-            </div>
-          )
-        })
-        }
-      </div> */}
       <br />
     </div>
   )
 }
 
-export default Question
+export default Quiz

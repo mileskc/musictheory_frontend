@@ -12,6 +12,7 @@ const Score = (props) => {
   }
   useEffect(() => {
     getScore()
+    window.scrollTo(0, 0)
   }, []);
 
   let params = props.match.params

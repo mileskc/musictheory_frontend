@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import Nav from './Nav'
 const Quizzes = (props) => {
-  // const [quizList, setQuizList] = useState([])
   console.log(props.data)
 
   return (
